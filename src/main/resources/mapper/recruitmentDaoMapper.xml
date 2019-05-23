@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.RecruitmentDao">
+
+
+    <insert id="addRecruitment">
+        insert into recruitment (dep_id,pos_id,description)
+        values (#{depId},#{posId},#{description})
+    </insert>
+    <update id="updateRecruitment">
+        update recruitment set dep_id =#{depId},pos_id=#{posId},description=#{description}
+        where rec_id = recId
+    </update>
+    <delete id="delRecruitment">
+        delete from recruitment where rec_id = recId
+    </delete>
+    <select id="queryRecruitment" resultType="com.example.demo.entity.Recruitment">
+        select * from recruitment
+    </select>
+</mapper>
